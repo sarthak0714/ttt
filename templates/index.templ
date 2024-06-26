@@ -1,0 +1,12 @@
+package templates
+
+templ Index() {
+	@Base() {
+		<h1>Tic-Tac-Toe</h1>
+		<form hx-post="/game" hx-push-url="true">
+			<input type="text" name="player1" placeholder="Player 1 ID" required/>
+			<input type="text" name="player2" placeholder="Player 2 ID" required/>
+			<button type="submit">Start Game</button>
+		</form>
+	}
+}

@@ -1,0 +1,35 @@
+package templates
+
+import "github.com/sarthak0714/ttt/internal/game"
+
+type GameState struct {
+	ID     string
+	Board  game.Board
+	Turn   string
+	Status string
+}
+
+templ Game(state GameState) {
+	@Base() {
+		<h1>Game: { state.ID }</h1>
+		<p>Status: { state.Status }</p>
+		<p>Turn: { state.Turn }</p>
+		<div class="board" hx-ext="ws" ws-connect={ "/ws/" + state.ID }>
+			for row, cells := range state.Board {
+				<div class="row">
+					for col, cell := range cells {
+						<button
+							class="cell"
+							hx-post={ "/game/" + state.ID + "/move" }
+							hx-vals={ `{"player_id":"` + state.Turn +
+            `","row":` + string('0' + rune(row)) + `,"col":` + string('0' + rune(col)) + `}` }
+							hx-swap="outerHTML"
+						>
+							{ cell }
+						</button>
+					}
+				</div>
+			}
+		</div>
+	}
+}
