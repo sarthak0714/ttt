@@ -7,13 +7,13 @@ This project is a web-based Tic-Tac-Toe game implemented using the actor model i
 
 ```
 tictactoe/
-├── cmd/
-│   └── server/
-│       └── main.go
+├── server/
+│   └── main.go
+│
 ├── internal/
 │   ├── actor/
-│   │   ├── game_actor.go
-│   │   └── player_actor.go
+│   │   ├── actor.go
+│   │   └── actor.go
 │   ├── game/
 │   │   ├── game.go
 │   │   └── board.go
@@ -35,23 +35,33 @@ tictactoe/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/tictactoe.git
+   git clone https://github.com/sarthak0714/tictactoe.git
    cd tictactoe
    ```
 
-2. Install the `templ` command-line tool:
+2. Install the `templ` cli:
    ```bash
    go install github.com/a-h/templ/cmd/templ@latest
    ```
 
-3. Generate the Go code from the templ files:
+3. Install dependencies:
    ```bash
-   templ generate
+   make deps
    ```
 
-4. Run the server:
+4. Generate Go files from templ:
    ```bash
-   go run cmd/server/main.go
+   make gen
+   ```
+
+5. Build Server:
+   ```bash
+   make build
+   ```
+
+6. Run Server (Running will also build and gen):
+   ```bash
+   make run
    ```
 
 The server will start on port 8080. You can access the game at `http://localhost:8080`.
