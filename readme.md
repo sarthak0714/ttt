@@ -1,5 +1,5 @@
 
-# Tic-Tac-Toe
+# Tic-Tac-Toe (TTT)
 
 This project is a web-based Tic-Tac-Toe game implemented using the actor model in Go. It leverages channels for communication between actors to ensure better encapsulation and scalability. The game supports creating new games, making moves, and subscribing to game updates via WebSockets.
 
@@ -35,8 +35,8 @@ tictactoe/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sarthak0714/tictactoe.git
-   cd tictactoe
+   git clone https://github.com/sarthak0714/ttt.git
+   cd ttt
    ```
 
 2. Install the `templ` cli:
@@ -118,6 +118,13 @@ Messages define the communication between actors:
 ### Static Files
 
 - **styles.css**: Basic CSS for styling the web pages.
+
+## Packages Used
+
+- **[templ](https://github.com/a-h/templ)** 
+- **[chi v5](https://github.com/go-chi/chi)**
+- **[gorilla/websocket](https://github.com/gorilla/websocket)**
+
 
 ## Contributing
 
