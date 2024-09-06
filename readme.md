@@ -31,6 +31,25 @@ tictactoe/
 └── go.sum
 ```
 
+## Benchmarks
+```bash
+goos: linux
+goarch: amd64
+pkg: github.com/sarthak0714/ttt/internal/actor
+cpu: 13th Gen Intel(R) Core(TM) i5-13450HX
+=== RUN   BenchmarkActorModel
+BenchmarkActorModel
+2024/09/06 17:44:06 Benchmark results:
+2024/09/06 17:44:06 100 games and 300 tested in 524.361µs:
+2024/09/06 17:44:06 Benchmark results:
+2024/09/06 17:44:06 10000 games and 30000 tested in 71.397478ms:
+2024/09/06 17:44:07 Benchmark results:
+2024/09/06 17:44:07 168000 games and 504000 tested in 1.186196461s:
+BenchmarkActorModel-16              1680            706076 ns/op          229612 B/op     4617 allocs/op
+PASS
+ok      github.com/sarthak0714/ttt/internal/actor       1.263s
+```
+
 ## Installation
 
 1. Clone the repository:
